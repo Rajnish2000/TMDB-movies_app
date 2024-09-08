@@ -22,7 +22,7 @@ const Home = () => {
     getwallPaperData();
   }, []);
   return (
-    <div className="h-full w-[100%] flex">
+    <div className="h-full w-full flex">
       <Sidenav />
       <div className="w-[90%] box-border">
         <Topnav />
