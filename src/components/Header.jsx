@@ -4,13 +4,14 @@ const Header = ({ data }) => {
   console.log(data);
   return (
     <div
-      className="w-full h-[70vh] flex flex-col justify-end items-start p-[5%] text-white"
+      className="w-full h-[60vh] flex flex-col justify-end items-start p-[5%] text-white"
       style={{
-        background: `linear-gradient(rgb(0,0,0,.2),rgb(0,0,0,.5),rgb(0,0,0,.8)), url(https://image.tmdb.org/t/p/original/${
+        background: `linear-gradient(rgb(0,0,0,.2),rgb(0,0,0,.4),rgb(0,0,0,.5)), url(https://image.tmdb.org/t/p/original/${
           data.backdrop_path || data.profile_path
         })`,
         backgroundPosition: "center",
         backgroundSize: "cover",
+
         backgroundRepeat: "no-repeat",
       }}
     >

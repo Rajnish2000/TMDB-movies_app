@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Sidenav = () => {
   return (
-    <div className="min-w-[fit-content] h-full border-r-[1px] border-zinc-400 py-10 px-12">
+    <div className="min-w-[fit-content] h-screen border-r-[1px] border-zinc-400 py-10 px-12 sticky top-0">
       <h1 className="text-2xl font-bold text-white">
         <i className="ri-tv-fill text-[#6556CD] mr-2"></i>
         <span className="text-2xl">TMDB.</span>
