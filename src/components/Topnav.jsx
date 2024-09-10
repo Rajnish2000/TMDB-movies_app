@@ -26,8 +26,8 @@ const Topnav = () => {
   }, [query]);
 
   return (
-    <div className="relative w-full bg-[#1F1E24] border-b-[1px] border-slate-600">
-      <div className="h-[10vh] mx-auto flex max-w-screen-xl items-center justify-start px-4 py-2 sm:px-6 lg:px-8">
+    <div className="relative w-full bg-[#1F1E24]">
+      <div className="h-[9vh] mx-auto flex max-w-screen-xl items-center justify-start px-4 py-2 sm:px-6 lg:px-8">
         <div className="flex grow justify-start items-center box-border">
           <i className="relative left-8 ri-search-line text-zinc-400 text-2xl"></i>
           <input

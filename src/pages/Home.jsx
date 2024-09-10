@@ -5,6 +5,7 @@ import axios from "../utils/axios";
 import Header from "../components/Header";
 import HorizontalCards from "../components/HorizontalCards";
 import Dropdown from "../components/Dropdown";
+import Loader from "../components/Loader";
 const Home = () => {
   const [wallpaper, setWallpaper] = useState(null);
   const [trending, setTrending] = useState(null);
@@ -57,11 +58,12 @@ const Home = () => {
       </div>
     </>
   ) : (
-    // </div>
-    <>
-      <h1 className="text-5xl text-white text-center">Loading</h1>
-    </>
+    <Loader />
   );
 };
 
 export default Home;
+
+{
+  /* <h1 className="text-5xl text-white text-center">Loading</h1> */
+}
