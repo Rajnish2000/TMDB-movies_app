@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const Header = ({ data }) => {
-  console.log(data);
   return (
     <div
       className="w-full h-[60vh] flex flex-col justify-end items-start p-[5%] text-white"

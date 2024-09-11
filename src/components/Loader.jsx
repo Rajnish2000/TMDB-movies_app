@@ -5,7 +5,7 @@ const Loader = () => {
   grid.register();
   return (
     <div className="w-screen h-screen flex justify-center items-center bg-none">
-      <l-grid size="128" speed="1.5" color="rgb(90,20,219)"></l-grid>
+      <l-grid size="150" speed="1.5" color="rgb(90,20,219)"></l-grid>
       {/* <l-dot-pulse size="120" speed="1.3" color="rgb(90,20,219)"></l-dot-pulse> */}
     </div>
   );

@@ -7,18 +7,19 @@ import Card from "../components/Card";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Loader from "../components/Loader";
 
-const Popular = () => {
-  const [category, setCategory] = useState("tv");
-  const [popular, setPopular] = useState([]);
+const TvShow = () => {
+  const [category, setCategory] = useState("airing_today");
+  const [tvShow, setTvShow] = useState([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const navigate = useNavigate();
 
-  const getPopular = async () => {
+  const getTvShows = async () => {
     try {
-      const { data } = await axios.get(`/${category}/popular?page=${page}`);
+      const { data } = await axios.get(`/tv/${category}?page=${page}`);
       if (data.results.length > 0) {
-        setPopular((prevState) => [...prevState, ...data.results]);
+        console.log(data.results);
+        setTvShow((prevState) => [...prevState, ...data.results]);
         setPage(page + 1);
       } else {
         setHasMore(false);
@@ -28,24 +29,20 @@ const Popular = () => {
     }
   };
 
-  const refreshHandler = () => {
-    if (popular.length == 0) {
-      getPopular();
+  useEffect(() => {
+    if (tvShow.length == 0) {
+      getTvShows();
     } else {
       setPage(1);
-      setPopular([]);
-      getPopular();
+      setTvShow([]);
+      getTvShows();
     }
-  };
-
-  useEffect(() => {
-    refreshHandler();
   }, [category]);
 
-  return popular.length != 0 ? (
+  return tvShow.length != 0 ? (
     <div
-      className={`w-full ${popular.length && "h-full"} ${
-        !popular.length && "h-screen"
+      className={`w-full ${tvShow.length && "h-full"} ${
+        !tvShow.length && "h-screen"
       } p-4`}
     >
       {/* Navbar */}
@@ -56,7 +53,9 @@ const Popular = () => {
               className="ri-arrow-left-line text-4xl text-zinc-500 hover:text-[#6552cd] duration-300 font-bo"
               onClick={() => navigate(-1)}
             ></i>
-            <h1 className="text-zinc-400 font-bold text-2xl">Popular</h1>
+            <h1 className="text-zinc-400 font-bold text-2xl">
+              Tv Show <sub className="text-sm font-normal">({category})</sub>
+            </h1>
           </div>
           <div className="w-[60%] h-[8vh] flex justify-center items-center">
             <Topnav />
@@ -65,7 +64,7 @@ const Popular = () => {
         <div className="flex justify-center items-center sm:flex-wrap h-full sm:justify-around">
           <Dropdown
             title="Category"
-            opt={["movie", "tv"]}
+            opt={["airing_today", "on_the_air", "popular", "top_rated"]}
             changeCategoryFunc={(e) => setCategory(e.target.value)}
           />
         </div>
@@ -73,13 +72,13 @@ const Popular = () => {
       {/* body content */}
 
       <InfiniteScroll
-        dataLength={popular.length}
-        next={getPopular}
+        dataLength={tvShow.length}
+        next={getTvShows}
         hasMore={hasMore}
         loader={<h1>Loading</h1>}
       >
         <div className="w-full h-full flex flex-wrap justify-center gap-10 mt-4">
-          {popular.map((item, i) => {
+          {tvShow.map((item, i) => {
             return <Card key={i} data={item} />;
           })}
         </div>
@@ -90,4 +89,4 @@ const Popular = () => {
   );
 };
 
-export default Popular;
+export default TvShow;
