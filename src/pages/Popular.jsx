@@ -80,7 +80,7 @@ const Popular = () => {
       >
         <div className="w-full h-full flex flex-wrap justify-center gap-10 mt-4">
           {popular.map((item, i) => {
-            return <Card key={i} data={item} />;
+            return <Card key={i} data={item} title={category} />;
           })}
         </div>
       </InfiniteScroll>

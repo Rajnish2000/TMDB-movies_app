@@ -19,14 +19,22 @@ const Header = ({ data }) => {
       </h1>
       <p className="text-xl mb-2 w-[60%]">
         {data.overview.split(" ").slice(0, 25).join(" ")}...
-        <Link className="text-blue-500">more</Link>
+        <Link
+          to={`/${data.media_type}/details/${data.id}`}
+          className="text-blue-500"
+        >
+          more
+        </Link>
       </p>
       <p className="text-lg mb-5">
         <i className="text-yellow-500 ri-megaphone-fill"></i>{" "}
         {data.release_date || "No date"}
         <i className="text-yellow-500 ml-5 ri-disc-fill"></i> {data.media_type}
       </p>
-      <Link className="bg-[#6556CD] py-4 px-5 rounded-md text-xl">
+      <Link
+        to={`/${data.media_type}/details/${data.id}/trailer`}
+        className="bg-[#6556CD] py-4 px-5 rounded-md text-xl"
+      >
         Watch Trailer
       </Link>
     </div>

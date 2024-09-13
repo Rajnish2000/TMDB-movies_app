@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
+
 const HorizontalCards = ({ data }) => {
   return (
     // <div className="w-full min-h-[45vh] flex flex-col justify-around mb-10">
     <div className="w-full px-4 h-[41vh] overflow-x-auto overflow-y-hidden flex gap-3 mb-10">
       {data.map((item, i) => {
         return (
-          <div
+          <Link
+            to={`/${item.media_type}/details/${item.id}`}
             key={i}
             className="lg:min-w-[220px] sm:min-w-[200px] h-full bg-zinc-900"
           >
@@ -26,7 +29,7 @@ const HorizontalCards = ({ data }) => {
                 <span className="text-zinc-500">more</span>
               </p>
             </div>
-          </div>
+          </Link>
         );
       })}
     </div>

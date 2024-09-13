@@ -67,7 +67,7 @@ const People = () => {
       >
         <div className="w-full h-full flex flex-wrap justify-center gap-10 mt-4">
           {people.map((item, i) => {
-            return <Card key={i} data={item} />;
+            return <Card key={i} data={item} title={"people"} />;
           })}
         </div>
       </InfiniteScroll>

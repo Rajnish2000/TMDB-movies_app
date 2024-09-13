@@ -52,6 +52,7 @@ const Topnav = () => {
             searchResult.map((movie, i) => {
               return (
                 <Link
+                  to={`/${movie.media_type}/details/${movie.id}`}
                   key={i}
                   className="flex box-border items-center gap-8 py-6 px-5 text-zinc-600 hover:text-black hover:bg-zinc-300 duration-300"
                 >

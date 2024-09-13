@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import noimage from "../../public/noimage.png";
-const Card = ({ data }) => {
+const Card = ({ data, title }) => {
   return (
     <div className="w-[15rem]  h-[fit-content] p-2 m-4 relative">
-      <Link className="flex flex-col">
+      <Link to={`/${title}/details/${data.id}`} className="flex flex-col">
         <div
           className="h-[22rem] bg-zinc-700 rounded shadow-xl shadow-black"
           //   style={{

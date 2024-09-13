@@ -79,7 +79,7 @@ const Movies = () => {
       >
         <div className="w-full h-full flex flex-wrap justify-center gap-10 mt-4">
           {movies.map((item, i) => {
-            return <Card key={i} data={item} />;
+            return <Card key={i} data={item} title={"movie"} />;
           })}
         </div>
       </InfiniteScroll>
