@@ -28,7 +28,12 @@ function App() {
               element={<PlayTrailer />}
             ></Route>
           </Route>
-          <Route path="/tv/details/:id" element={<TvShowDetail />}></Route>
+          <Route path="/tv/details/:id" element={<TvShowDetail />}>
+            <Route
+              path="/tv/details/:id/trailer"
+              element={<PlayTrailer />}
+            ></Route>
+          </Route>
           <Route path="/people/details/:id" element={<PersonDetail />}></Route>
         </Routes>
       </div>

@@ -18,7 +18,6 @@ const TvShow = () => {
     try {
       const { data } = await axios.get(`/tv/${category}?page=${page}`);
       if (data.results.length > 0) {
-        console.log(data.results);
         setTvShow((prevState) => [...prevState, ...data.results]);
         setPage(page + 1);
       } else {
