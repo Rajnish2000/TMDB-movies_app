@@ -13,7 +13,7 @@ const Home = () => {
   const getwallPaperData = async () => {
     try {
       const result = await axios.get("/trending/all/day");
-      // console.log(result.data.results);
+      console.log(result.data.results);
       setWallpaper(
         result.data.results[
           Math.floor(Math.random() * result.data.results.length)
