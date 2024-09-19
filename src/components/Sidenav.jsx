@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom";
 
-const Sidenav = () => {
+const Sidenav = ({ open }) => {
   return (
-    <div className="min-w-[fit-content] h-screen border-r-[1px] border-zinc-400 py-10 px-12 sticky top-0">
-      <h1 className="text-2xl font-bold text-white">
+    <div
+      className={`min-w-[fit-content] bg-[#1F1E24] h-full overflow-y-scroll scroll-smooth border-r-[1px] border-zinc-400 py-0 px-12 fixed top-5 z-20 ${
+        open ? "left-[0%] duration-1000" : "left-[-100%] duration-1000"
+      } `}
+    >
+      <h1 className="text-[4xl] font-bold text-white ml-6">
         <i className="ri-tv-fill text-[#6556CD] mr-2"></i>
         <span className="text-2xl">TMDB.</span>
       </h1>
       <nav className="flex flex-col gap-3 text-zinc-400 text-xl py-5">
-        <h1 className="text-white font-semibold text-xl mt-10 mb-5">
+        <h1 className="text-white font-semibold text-xl mt-5 mb-5">
           New feeds
         </h1>
         <Link
@@ -52,11 +56,17 @@ const Sidenav = () => {
         <h1 className="text-white font-semibold text-xl mt-10 mb-5">
           Websites Information
         </h1>
-        <Link className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5">
+        <Link
+          to="/about"
+          className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5"
+        >
           <i className="mr-2 ri-information-fill"></i>
           About TMDB
         </Link>
-        <Link className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5">
+        <Link
+          to="/contact"
+          className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5"
+        >
           <i className="mr-2 ri-phone-fill"></i>
           Contact Us
         </Link>

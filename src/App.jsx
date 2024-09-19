@@ -10,6 +10,8 @@ import MovieDetail from "./pages/MovieDetail";
 import TvShowDetail from "./pages/TvShowDetail";
 import PersonDetail from "./pages/PersonDetail";
 import PlayTrailer from "./components/PlayTrailer";
+import About from "./pages/About";
+import Contact from "./pages/Contacts";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path="/movies" element={<Movies />}></Route>
           <Route path="/tvshow" element={<TvShow />}></Route>
           <Route path="/people" element={<People />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
           <Route path="/movie/details/:id" element={<MovieDetail />}>
             <Route
               path="/movie/details/:id/trailer"

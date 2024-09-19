@@ -20,7 +20,7 @@ const Trending = () => {
       const { data } = await axios.get(
         `/trending/${category}/${duration}?page=${page}`
       );
-      console.log(data);
+      // console.log(data);
       if (data.results.length > 0) {
         setTrending((prevState) => [...prevState, ...data.results]);
         setPage(page + 1);
@@ -53,7 +53,7 @@ const Trending = () => {
       } p-4`}
     >
       {/* Navbar */}
-      <div className="w-full flex sm:flex-wrap sm:gap-2 md:gap-3 justify-between h-[9vh] mb-5">
+      <div className="w-full flex flex-row justify-between h-[9vh] mb-5">
         <div className=" px-2 flex justify-between w-[60%] sm:flex-wrap sm:gap-2">
           <div className="flex gap-5 justify-center items-center px-3">
             <i
@@ -66,7 +66,7 @@ const Trending = () => {
             <Topnav />
           </div>
         </div>
-        <div className="flex justify-center items-center sm:flex-wrap h-full sm:justify-around">
+        <div className="flex flex-row justify-center items-center h-full w-[50%]">
           <Dropdown
             title="Category"
             opt={["movie", "tv", "all"]}

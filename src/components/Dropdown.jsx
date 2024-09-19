@@ -1,8 +1,13 @@
 const Dropdown = ({ title, opt, changeCategoryFunc }) => {
   return (
     <>
-      <div className="select">
-        <select defaultValue="0" name="format" onChange={changeCategoryFunc}>
+      <div className="select z-0">
+        <select
+          defaultValue="0"
+          name="format"
+          onChange={changeCategoryFunc}
+          className="z-0"
+        >
           <option value="0" disabled>
             {title}
           </option>
