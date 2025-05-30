@@ -35,7 +35,7 @@ const Topnav = () => {
             className="bg-[#1F1E24] outline-none flex h-14 w-[70%] rounded-md text-zinc-200 mx-10 px-3 py-2 text-xl placeholder:text-gray-400"
             type="text"
             value={query}
-            placeholder="Serach"
+            placeholder="Search"
           ></input>
           {query.length > 0 && (
             <i
